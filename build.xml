@@ -10,6 +10,17 @@
 	 <!-- Defining classpaths & Task Defs                                        -->
 	 <!-- ====================================================================== -->
 	<property environment="env"/> 
+	<property name="cobertura.dir" value="C:/javastuff/cobertura" />
+
+<path id="cobertura.classpath">
+    <fileset dir="${cobertura.dir}">
+        <include name="cobertura.jar" />
+        <include name="lib/**/*.jar" />
+    </fileset>
+</path>
+
+<taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
+	
 	<property name="installpath.pmd" value="${env.PMD_HOME}/lib"/> 
 	<property name="pmd.installpath" value="${env.PMD_HOME}/lib"/>
 	<property name="pmd.classpath" value="${env.PMD_HOME}/lib"/>
